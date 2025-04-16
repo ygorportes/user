@@ -1,10 +1,7 @@
 package com.portestech.user.infrastructure.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
@@ -12,6 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "address")
+@Builder
 public class Address {
 
     @Id
@@ -22,7 +20,7 @@ public class Address {
     private String street;
 
     @Column(name = "number")
-    private String number;
+    private Long number;
 
     @Column(name = "complement", length = 10)
     private String complement;
@@ -31,7 +29,7 @@ public class Address {
     private String city;
 
     @Column(name = "state", length = 2)
-    private String estado;
+    private String state;
 
     @Column(name = "cep", length = 9)
     private String cep;
